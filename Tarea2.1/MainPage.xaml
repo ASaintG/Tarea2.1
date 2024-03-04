@@ -34,6 +34,7 @@
                             <StackLayout Orientation="Horizontal" Padding="10">
                                 <Image Source="{Binding flags}"  WidthRequest="50" HeightRequest="50" Aspect="AspectFill" ></Image>
                                 <Label Text="{Binding name}" VerticalTextAlignment="Center" Margin="10,0,0,0"></Label>
+                                <Label Text="{Binding cc2}" VerticalTextAlignment="Center" Margin="10,0,0,0"></Label>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
