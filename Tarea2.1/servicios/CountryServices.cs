@@ -74,8 +74,8 @@ namespace Tarea2._1.servicios
                 //Info del pais
                 
                 //string currency = countryElement.GetProperty("currencies").GetProperty("name").GetProperty("symbol").GetString();
-                //string people = countryElement.GetProperty("population").GetString();
-                //string idiom = countryElement.GetProperty("languages").GetProperty("spa").GetString();
+                string people = countryElement.GetProperty("population").GetString();
+                string idiom = countryElement.GetProperty("languages").GetProperty("spa").GetString();
 
                 // Crear un objeto Countrys y agregarlo a la lista
                 var country = new Countrys
@@ -85,8 +85,8 @@ namespace Tarea2._1.servicios
                     cc2 = cca2,
                     //coord = coordena,
                     //money = currency,
-                    //pobla = people,
-                    //langu = idiom
+                    pobla = people,
+                    langu = idiom
                 };
 
                 countries.Add(country);

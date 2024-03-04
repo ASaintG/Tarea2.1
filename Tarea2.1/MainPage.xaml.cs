@@ -3,10 +3,10 @@ using Tarea2._1.Models;
 namespace Tarea2._1
 {
 	public partial class MainPage : ContentPage
-	{
-		int count = 0;
+	{		
 		private readonly CountryService countryService;
-		public MainPage(CountryService service)
+        private const int MaxDisplayedCountries = 60;
+        public MainPage(CountryService service)
 		{
 			InitializeComponent();
 			countryService = service;
@@ -16,7 +16,7 @@ namespace Tarea2._1
         {
             loading.IsVisible = true;
             var data = await countryService.Obtener();
-            listViewCountrys.ItemsSource = data;
+            listViewCountrys.ItemsSource = data.Take(MaxDisplayedCountries).ToList();
             searchStackLayout.IsVisible = true;
             CounterBtn.IsVisible = false;
         }
@@ -30,7 +30,7 @@ namespace Tarea2._1
             {
                 loading.IsVisible = true;
                 var data = await countryService.ObtenerRegion(selectedRegion);
-                listViewCountrys.ItemsSource = data;
+                listViewCountrys.ItemsSource = data.Take(MaxDisplayedCountries).ToList();
             }
         }
 
@@ -45,7 +45,7 @@ namespace Tarea2._1
                     .Where(country => country.name.ToLower().Contains(searchText.ToLower()))
                     .ToList();
 
-                listViewCountrys.ItemsSource = filteredCountries;
+                listViewCountrys.ItemsSource = filteredCountries.Take(MaxDisplayedCountries).ToList();
             }
             else
             {
