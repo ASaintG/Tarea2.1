@@ -69,13 +69,17 @@ namespace Tarea2._1.servicios
 
                 //coordenadas
 
-                //string coordena = countryElement.GetProperty("latlng").GetString();
+                //double coordena = countryElement.GetProperty("latlng").GetDouble();
+                JsonElement latlng = countryElement.GetProperty("latlng");
+                double latitude = latlng[0].GetDouble();
+                double longitude = latlng[1].GetDouble();
+
 
                 //Info del pais
-                
+
                 //string currency = countryElement.GetProperty("currencies").GetProperty("name").GetProperty("symbol").GetString();
-                string people = countryElement.GetProperty("population").GetString();
-                string idiom = countryElement.GetProperty("languages").GetProperty("spa").GetString();
+                double people = countryElement.GetProperty("population").GetDouble();
+                //string idiom = countryElement.GetProperty("languages").GetProperty("spa").GetString();
 
                 // Crear un objeto Countrys y agregarlo a la lista
                 var country = new Countrys
@@ -83,10 +87,11 @@ namespace Tarea2._1.servicios
                     name = name,
                     flags = flag,
                     cc2 = cca2,
-                    //coord = coordena,
-                    //money = currency,
+                    lati = latitude,
+                    longi = longitude,
                     pobla = people,
-                    langu = idiom
+                    // money = currency,
+                    // langu = idiom
                 };
 
                 countries.Add(country);

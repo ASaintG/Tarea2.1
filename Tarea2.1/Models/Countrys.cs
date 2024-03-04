@@ -11,8 +11,9 @@ namespace Tarea2._1.Models
         public string cc2{ get; set; } //Iniciales
 
         public string money{ get; set; } //moneda
-        public string coord{ get; set; } //lat
-        public string pobla{ get; set; } //poblacion
+        public double lati{ get; set; } // Latitud
+        public double longi{ get; set; } // Longitud
+        public double pobla { get; set; } //poblacion
         public string langu{ get; set; } // idioma
     }
 }
