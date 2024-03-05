@@ -10,17 +10,20 @@ namespace Tarea2._1
 			var builder = MauiApp.CreateBuilder();
 			builder
 				.UseMauiApp<App>()
+
 				.ConfigureFonts(fonts =>
 				{
 					fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 					fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-				});
-			builder.Services.AddSingleton<CountryService,CountryServices>();
-			builder.Services.AddTransient<MainPage>();
+				})
+                .UseMauiMaps();
+				builder.Services.AddSingleton<CountryService,CountryServices>();
+				builder.Services.AddTransient<MainPage>();
+			;	
+		
 
-#if DEBUG
-			builder.Logging.AddDebug();
-#endif
+            builder.Logging.AddDebug();
+
 
 			return builder.Build();
 		}

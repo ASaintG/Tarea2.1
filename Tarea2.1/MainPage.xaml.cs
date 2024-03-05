@@ -2,15 +2,15 @@
 using Tarea2._1.Models;
 namespace Tarea2._1
 {
-	public partial class MainPage : ContentPage
-	{		
-		private readonly CountryService countryService;
+    public partial class MainPage : ContentPage
+    {
+        private readonly CountryService countryService;
         private const int MaxDisplayedCountries = 60;
         public MainPage(CountryService service)
-		{
-			InitializeComponent();
-			countryService = service;
-		}
+        {
+            InitializeComponent();
+            countryService = service;
+        }
 
         private async void OnCounterClicked(object sender, EventArgs e)
         {
@@ -52,6 +52,20 @@ namespace Tarea2._1
                 // Si el campo de búsqueda está vacío, mostrar todos los países
                 OnCounterClicked(sender, e);
             }
+        }
+        private async void OnItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            if (e.Item != null && e.Item is Countrys selectedCountry)
+            {
+                bool answer = await DisplayAlert("Confirmación", $"¿Deseas ir a {selectedCountry.name}?", "Sí", "No");
+                if (answer)
+                {
+                    // Pasar la latitud y longitud al constructor de Mapita
+                    await Navigation.PushAsync(new Mapita(selectedCountry.lati, selectedCountry.longi, selectedCountry));
+                }
+            }
+
+            ((ListView)sender).SelectedItem = null; // Desactivar el resaltado del elemento seleccionado
         }
     }
 }

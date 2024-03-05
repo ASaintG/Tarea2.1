@@ -39,7 +39,7 @@
 
             <ActivityIndicator x:Name="loading" HeightRequest="30" Color="Blue" IsRunning="True" IsVisible="false"></ActivityIndicator>
 
-            <ListView x:Name="listViewCountrys">
+            <ListView x:Name="listViewCountrys" SelectionMode="Single" ItemTapped="OnItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
