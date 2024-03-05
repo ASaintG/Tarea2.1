@@ -35,8 +35,9 @@ namespace Tarea2._1.servicios
                 var country = new Countrys
 				{
 					name = name,
-					flags = flag
-				};
+					flags = flag,
+                    cc2 = cca2
+                };
 
 				countries.Add(country);
 			}
