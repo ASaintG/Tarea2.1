@@ -77,10 +77,11 @@ namespace Tarea2._1.servicios
 
                 //Info del pais
 
-                //string currency = countryElement.GetProperty("currencies").GetProperty("name").GetProperty("symbol").GetString();
-                double people = countryElement.GetProperty("population").GetDouble();
+                //string currency = countryElement.GetProperty("currencies").GetProperty("name").GetProperty("symbol").GetString();                
                 //string idiom = countryElement.GetProperty("languages").GetProperty("spa").GetString();
-
+                double people = countryElement.GetProperty("population").GetDouble();
+                double expan = countryElement.GetProperty("area").GetDouble();
+                string cap = countryElement.GetProperty("capital").GetString();
                 // Crear un objeto Countrys y agregarlo a la lista
                 var country = new Countrys
                 {
@@ -90,6 +91,8 @@ namespace Tarea2._1.servicios
                     lati = latitude,
                     longi = longitude,
                     pobla = people,
+                    area = expan,
+                    capital = cap
                     // money = currency,
                     // langu = idiom
                 };

@@ -15,5 +15,7 @@ namespace Tarea2._1.Models
         public double longi{ get; set; } // Longitud
         public double pobla { get; set; } //poblacion
         public string langu{ get; set; } // idioma
+        public string capital{ get; set; } //capital
+        public double area { get; set; } //expansion
     }
 }
