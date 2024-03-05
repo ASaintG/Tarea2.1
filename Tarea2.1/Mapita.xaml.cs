@@ -11,8 +11,8 @@ public partial class Mapita : ContentPage
 		InitializeComponent();
 
         var pin = new Pin
-        {
-            Label = country.name,
+        {            
+            Label = $"País: {country.name}\nPoblación: {country.pobla}\nÁrea territorial: {country.area} km²",
             Location = new Location(latitude, longitude), // Usar Position en lugar de Location
             Type = PinType.Place
         };
