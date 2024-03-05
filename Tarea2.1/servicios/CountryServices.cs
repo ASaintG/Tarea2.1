@@ -30,9 +30,9 @@ namespace Tarea2._1.servicios
 				// Obtener el nombre común y la bandera de cada país
 				string name = countryElement.GetProperty("name").GetProperty("common").GetString();
 				string flag = countryElement.GetProperty("flags").GetProperty("png").GetString();
-
-				// Crear un objeto Countrys y agregarlo a la lista
-				var country = new Countrys
+                string cca2 = countryElement.GetProperty("cca2").GetString();
+                // Crear un objeto Countrys y agregarlo a la lista
+                var country = new Countrys
 				{
 					name = name,
 					flags = flag
@@ -79,9 +79,10 @@ namespace Tarea2._1.servicios
 
                 //string currency = countryElement.GetProperty("currencies").GetProperty("name").GetProperty("symbol").GetString();                
                 //string idiom = countryElement.GetProperty("languages").GetProperty("spa").GetString();
-                double people = countryElement.GetProperty("population").GetDouble();
+                double people = countryElement.GetProperty("population").GetDouble();                
                 double expan = countryElement.GetProperty("area").GetDouble();
-                string cap = countryElement.GetProperty("capital").GetString();
+                
+
                 // Crear un objeto Countrys y agregarlo a la lista
                 var country = new Countrys
                 {
@@ -91,8 +92,7 @@ namespace Tarea2._1.servicios
                     lati = latitude,
                     longi = longitude,
                     pobla = people,
-                    area = expan,
-                    capital = cap
+                    area = expan,                
                     // money = currency,
                     // langu = idiom
                 };
