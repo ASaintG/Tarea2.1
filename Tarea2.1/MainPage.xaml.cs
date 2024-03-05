@@ -53,6 +53,7 @@ namespace Tarea2._1
                 OnCounterClicked(sender, e);
             }
         }
+
         private async void OnItemTapped(object sender, ItemTappedEventArgs e)
         {
             if (e.Item != null && e.Item is Countrys selectedCountry)
